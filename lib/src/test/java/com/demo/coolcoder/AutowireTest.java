@@ -28,7 +28,7 @@ public class AutowireTest {
 	}
 	
 	@Test
-	public void testNoAutowireType() {
+	 void testNoAutowireType() {
 		Demo1 demo1 = applicationContext.getBean(Demo1.class);
 		assertNotNull(demo1);
 		
@@ -36,14 +36,14 @@ public class AutowireTest {
 	}
 	
 	@Test
-	public void testAutowireByType() {
+	 void testAutowireByType() {
 		Demo3 demo3 = applicationContext.getBean(Demo3.class);
 		assertNotNull(demo3);
 		assertNotNull(demo3.getDemo4());
 	}
 	
 	@Test
-	public void testAutowireByName() {
+	 void testAutowireByName() {
 		Demo5 demo5 = applicationContext.getBean(Demo5.class);
 		assertNotNull(demo5);
 		assertNotNull(demo5.getDm6_v1());
@@ -51,14 +51,14 @@ public class AutowireTest {
 	}
 	
 	@Test
-	public void testAutowireByConStrctor() {
+	 void testAutowireByConStrctor() {
 		Demo7 demo7 = applicationContext.getBean(Demo7.class);
 		assertNotNull(demo7);
 		assertNotNull(demo7.getDemo8());
 		
 	}
 	@Test
-	public void testInheritanceBeanDI() {
+	 void testInheritanceBeanDI() {
 		ContractEmployee baseEmployee =applicationContext.getBean("contract", ContractEmployee.class);
 		baseEmployee.setEmpId(1);
 		baseEmployee.setEmpName("test");
@@ -68,7 +68,7 @@ public class AutowireTest {
 	}
 	
 	@Test
-	public void testAutowireForAbstract() {
+	 void testAutowireForAbstract() {
 		Demo9 demo9 = applicationContext.getBean(Demo9.class);
 		assertNotNull(demo9);
 		assertNotNull(demo9.getBaseDemo());
@@ -78,7 +78,7 @@ public class AutowireTest {
 	}
 	
 	@Test
-	public void testProperties() {
+	 void testProperties() {
 		Appconfig appconfig = applicationContext.getBean(Appconfig.class);
 		assertNotNull(appconfig);
 		assertEquals("spring core", appconfig.getAppName());
