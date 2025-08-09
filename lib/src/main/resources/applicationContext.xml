@@ -9,5 +9,37 @@
 		<property name="name" value="chandu"/>
          </bean>
          
-         <bean name = "customerService" class = "com.demo.coolcoder.CustomerService" init-method="customInit" destroy-method="customDestroy"/>
+        <bean name = "customerService" class = "com.demo.coolcoder.CustomerService" init-method="customInit" destroy-method="customDestroy"/>
+         
+         <bean name = "dm1" class = "com.demo.coolcoder.di.xml.Demo1" autowire="no">
+			 <property name="demo2" ref="dm2"/>
+         </bean>
+         <bean name = "dm2" class = "com.demo.coolcoder.di.xml.Demo2"/>
+         
+         
+          <bean name = "dm3" class = "com.demo.coolcoder.di.xml.Demo3" autowire="byType"/>
+          <bean name = "dm4" class = "com.demo.coolcoder.di.xml.Demo4" />
+          
+          
+          <bean name = "dm5" class = "com.demo.coolcoder.di.xml.Demo5" autowire="byName"/>
+          <bean name = "dm6_v1" class = "com.demo.coolcoder.di.xml.Demo6" />
+          <bean name = "dm6_v2" class = "com.demo.coolcoder.di.xml.Demo6" />
+          
+           <bean name = "dm7" class = "com.demo.coolcoder.di.xml.Demo7" autowire="constructor"/>
+           <bean name = "dm8" class = "com.demo.coolcoder.di.xml.Demo8" />
+           
+            <bean name = "baseEmployee" class = "com.demo.coolcoder.di.xml.BaseEmployee"/>
+            
+            <bean name = "contract" class = "com.demo.coolcoder.di.xml.ContractEmployee" parent="baseEmployee"/>
+            
+             <bean name = "permemnent" class = "com.demo.coolcoder.di.xml.PermemnentEmployee" parent="baseEmployee"/>
+             
+             
+              <bean name = "dm9" class = "com.demo.coolcoder.di.xml.Demo9" autowire="byType" >
+				  <property name="baseDemo" ref="dm11"></property>
+              </bean>
+              <bean name = "dm10" class = "com.demo.coolcoder.di.xml.Demo10" />
+              <bean name = "dm11" class = "com.demo.coolcoder.di.xml.Demo11" />
+              
+            
 </beans>
