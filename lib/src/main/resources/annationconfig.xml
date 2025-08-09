@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context.xsd">
+        
+       
+        <context:annotation-config/>
+        <context:component-scan base-package="com.demo.coolcoder.di.autodetect"/>
+        
+       
+       
+       <bean name = "annonDemo1" class = "com.demo.coolcoder.di.anontation.AnnDemo1"/>
+       
+       <bean name = "annonDemo2" class = "com.demo.coolcoder.di.anontation.AnnDemo2"/>
+       
+       <bean name = "annonDemo3" class = "com.demo.coolcoder.di.anontation.AnnDemo3"/>
+       
+       <bean name = "annonDemo4_v1" class = "com.demo.coolcoder.di.anontation.AnnDemo4">
+		 <property name="id" value="1"/>
+       </bean>
+       
+       <bean name = "annonDemo4_v2" class = "com.demo.coolcoder.di.anontation.AnnDemo4">
+		   <property name="id" value="2"/>
+       </bean>
+       
+       <bean name = "annonDemo5" class = "com.demo.coolcoder.di.anontation.AnnDemo5"/>
+       
+       <bean name = "annonDemo6" class = "com.demo.coolcoder.di.anontation.AnnDemo6"/>
+       
+       <bean name = "annonDemo7" class = "com.demo.coolcoder.di.anontation.AnnDemo7"/>
+              
+            
+</beans>

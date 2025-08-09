@@ -1,5 +1,7 @@
 package com.demo.coolcoder;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import org.junit.jupiter.api.BeforeAll;
@@ -7,6 +9,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.demo.coolcoder.di.xml.Appconfig;
 import com.demo.coolcoder.di.xml.BaseDemo;
 import com.demo.coolcoder.di.xml.ContractEmployee;
 import com.demo.coolcoder.di.xml.Demo1;
@@ -72,6 +75,14 @@ public class AutowireTest {
 		BaseDemo baseDemo = demo9.getBaseDemo();
 		baseDemo.m1();
 	
+	}
+	
+	@Test
+	public void testProperties() {
+		Appconfig appconfig = applicationContext.getBean(Appconfig.class);
+		assertNotNull(appconfig);
+		assertEquals("spring core", appconfig.getAppName());
+		assertEquals("1.0", appconfig.getVersion());
 	}
 
 }
